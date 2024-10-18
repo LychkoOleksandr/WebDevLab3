@@ -1,0 +1,183 @@
+* {
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.segment {
+  border: solid 1px black;
+}
+
+.left-segment {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+
+.middle-segment {
+  width: 5%;
+  height: 100%;
+  float: left;
+  background-color: #f0f0f0;
+}
+
+.right-segment {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+
+.text-containing-segment {
+  padding: 5%;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.area-container {
+  position: absolute;
+  border: 2px solid #333;
+  background-color: rgba(255, 255, 255, 0.5);
+  align-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 36px;
+  color: #333;
+  pointer-events: none;
+}
+
+.img-segment img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+#container-1 {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+}
+
+#container-2 {
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+}
+
+#container-3 {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
+
+.img-map {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#segment2 a{
+  font-size: 36px;
+}
+
+#segment1 {
+  position: relative;
+  background-color: #ff9999;
+
+  height: 15%;
+}
+
+#segment2 {
+
+  position: relative;
+  background-color: #ffff99;
+  height: 70%;
+}
+
+#segment3 {
+  position: relative;
+  background-color: #ff9999;
+  height: 15%;
+}
+
+#segment4 {
+  background-color: #ffff99;
+  height: 85%;
+  text-align: center;
+  position: relative;
+}
+
+#segment5 {
+  background-color: #ff9999;
+  height: 15%;
+}
+
+#image-map {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+#heading-X {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  font-size: 16px;
+  padding: 10px;
+}
+
+#heading-Y {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  font-size: 16px;
+  padding: 10px;
+}
+
+nav#menu ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+nav#menu ul li {
+  margin: 30px 0;
+}
+
+nav#menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+nav#menu ul li a:hover {
+  background-color: #ddd;
+}
+
+ol li {
+  margin: 30px 0;
+  font-size: 24px;
+}

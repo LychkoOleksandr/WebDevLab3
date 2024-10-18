@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+<div class="container">
+  <div class="left-segment">
+    <div class="segment" id="segment1">
+      <div>
+        <h1 id="heading-X">Grid</h1>
+      </div>
+    </div>
+
+    <div class="segment" id="segment2">
+      <img class="img-map" src="coral-fill.png" usemap="#image-map" alt="Clickable Map">
+      <map name="image-map">
+        <area shape="rect" coords="0,0,50,50" href="index.html" alt="Plain">
+        <area shape="rect" coords="50,0,100,50" href="page2.html" alt="Flexbox">
+        <area shape="rect" coords="0,50,100,100" href="page3.html" alt="Grid">
+      </map>
+      <div class="area-container" id="container-1">Plain</div>
+      <div class="area-container" id="container-2">Flexbox</div>
+      <div class="area-container" id="container-3">Grid</div>
+    </div>
+
+    <div class="segment" id="segment3">
+      <div>
+        <h1 id="heading-Y">Heading Y</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="middle-segment segment"></div>
+
+  <div class="right-segment">
+    <div class="segment" id="segment4">
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Plain</a></li>
+          <li><a href="page2.html">Flexbox</a></li>
+          <li><a href="page3.html">Grid</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="text-containing-segment segment" id="segment5">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis turpis, fermentum ut urna id, tempor vulputate mi. Sed pharetra suscipit dolor, a feugiat diam. Sed quis mollis urna. Proin blandit mauris quis dolor consequat, ac auctor nulla finibus. Cras commodo et quam sit amet sagittis. Nunc porta eget felis.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const img = document.querySelector("#segment2 img");
+    const areas = document.querySelectorAll("map area");
+
+    function updateMapCoords() {
+      const imgWidth = img.clientWidth;
+      const imgHeight = img.clientHeight;
+
+      areas[0].coords = `0,0,${imgWidth / 2},${imgHeight / 2}`;
+      areas[1].coords = `${imgWidth / 2},0,${imgWidth},${imgHeight / 2}`;
+      areas[2].coords = `0,${imgHeight / 2},${imgWidth},${imgHeight}`;
+    }
+
+    img.onload = updateMapCoords;
+
+    window.addEventListener('resize', updateMapCoords);
+
+    updateMapCoords();
+  });
+</script>
