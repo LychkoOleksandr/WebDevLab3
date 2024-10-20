@@ -3,34 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plain</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Main page</title>
+  <style>
+    * {
+      color: #333333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .segment {
+      border: solid 1px black;
+    }
+
+    .left-segment {
+      width: 70%;
+      height: 100%;
+      float: left;
+    }
+
+    .middle-segment {
+      width: 5%;
+      height: 100%;
+      float: left;
+      background-color: #f0f0f0;
+    }
+
+    .right-segment {
+      width: 25%;
+      height: 100%;
+      float: left;
+    }
+
+    .text-containing-segment {
+      padding: 5%;
+      text-align: justify;
+      overflow: hidden;
+    }
+
+    .img-segment img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    #segment1 {
+      position: relative;
+      background-color: #ff9999;
+      height: 15%;
+    }
+
+    #segment2 {
+      position: relative;
+      background-color: #ffff99;
+      height: 70%;
+    }
+
+    #segment3 {
+      position: relative;
+      background-color: #ff9999;
+      height: 15%;
+    }
+
+    #segment4 {
+      background-color: #ffff99;
+      height: 85%;
+      text-align: center;
+      position: relative;
+    }
+
+    #segment5 {
+      background-color: #ff9999;
+      height: 15%;
+    }
+
+    #heading-X {
+      position: absolute;
+      top: 50%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+      background-color: #f0f0f0;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    #heading-Y {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      background-color: #f0f0f0;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    nav#menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    nav#menu ul li {
+      margin: 30px 0;
+    }
+
+    nav#menu ul li a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      padding: 10px 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    nav#menu ul li a:hover {
+      background-color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left-segment, .right-segment {
+        width: 100%;
+        float: none;
+        height: auto;
+      }
+
+      #segment1, #segment3 {
+        min-height: 100px; /* Set minimum height to avoid squashing */
+      }
+
+      #segment2, #segment4, #segment5 {
+        height: auto;
+      }
+
+      .middle-segment {
+        display: none; /* Hide the middle segment on mobile screens */
+      }
+
+      #heading-X, #heading-Y {
+        font-size: 14px;
+      }
+
+      nav#menu ul {
+        position: static;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="container">
   <div class="left-segment">
     <div class="segment" id="segment1">
-      <div>
-        <h1 id="heading-X">Plain</h1>
-      </div>
+      <h1 id="heading-X">Main page</h1>
     </div>
 
-    <div class="segment" id="segment2">
-      <img class="img-map" src="coral-fill.png" usemap="#image-map" alt="Clickable Map">
-      <map name="image-map">
-        <area shape="rect" coords="0,0,50,50" href="index.html" alt="Plain">
-        <area shape="rect" coords="50,0,100,50" href="page2.html" alt="Flexbox">
-        <area shape="rect" coords="0,50,100,100" href="page3.html" alt="Grid">
-      </map>
-      <div class="area-container" id="container-1">Plain</div>
-      <div class="area-container" id="container-2">Flexbox</div>
-      <div class="area-container" id="container-3">Grid</div>
+    <div class="segment img-segment" id="segment2">
+      <img src="https://i.imgur.com/W7oacXj.png" alt="Plumbus-Rick!">
     </div>
 
     <div class="segment" id="segment3">
-      <div>
-        <h1 id="heading-Y">Heading Y</h1>
-      </div>
+      <h1 id="heading-Y">Heading Y</h1>
     </div>
   </div>
 
@@ -40,38 +192,18 @@
     <div class="segment" id="segment4">
       <nav id="menu">
         <ul>
-          <li><a href="index.html">Plain</a></li>
-          <li><a href="page2.html">Flexbox</a></li>
-          <li><a href="page3.html">Grid</a></li>
+          <li>Item in the list</li>
+          <li>Item in the list</li>
+          <li>Item in the list</li>
+          <li>Item in the list</li>
+          <li>Item in the list</li>
         </ul>
       </nav>
     </div>
     <div class="text-containing-segment segment" id="segment5">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis turpis, fermentum ut urna id, tempor vulputate mi. Sed pharetra suscipit dolor, a feugiat diam. Sed quis mollis urna. Proin blandit mauris quis dolor consequat, ac auctor nulla finibus. Cras commodo et quam sit amet sagittis. Nunc porta eget felis.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis turpis, fermentum ut urna id, tempor vulputate mi. Sed pharetra suscipit dolor, a feugiat diam. Sed quis mollis urna. Proin blandit mauris quis dolor consequat, ac auctor nulla finibus.</p>
     </div>
   </div>
 </div>
 </body>
 </html>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const img = document.querySelector("#segment2 img");
-    const areas = document.querySelectorAll("map area");
-
-    function updateMapCoords() {
-      const imgWidth = img.clientWidth;
-      const imgHeight = img.clientHeight;
-
-      areas[0].coords = `0,0,${imgWidth / 2},${imgHeight / 2}`;
-      areas[1].coords = `${imgWidth / 2},0,${imgWidth},${imgHeight / 2}`;
-      areas[2].coords = `0,${imgHeight / 2},${imgWidth},${imgHeight}`;
-    }
-
-    img.onload = updateMapCoords;
-
-    window.addEventListener('resize', updateMapCoords);
-
-    updateMapCoords();
-  });
-</script>
